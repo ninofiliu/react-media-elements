@@ -1,7 +1,23 @@
 {
   "name": "react-media-elements",
-  "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
+  "description": "Support for media attributes in <audio> and <video>",
+  "author": "Nino Filiu <nino.filiu@gmail.com> (http://ninofiliu.com)",
+  "keywords": [
+    "react",
+    "typescript",
+    "web",
+    "dom",
+    "media",
+    "audio",
+    "video",
+    "HTMLMediaElement",
+    "HTMLVideoElement",
+    "HTMLAudioElement"
+  ],
+  "homepage": "https://github.com/ninofiliu/react-media-elements",
+  "repository": "github:ninofiliu/react-media-elements",
+  "license": "MIT",
   "type": "module",
   "files": [
     "dist"
