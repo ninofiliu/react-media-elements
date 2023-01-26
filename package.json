@@ -1,6 +1,6 @@
 {
   "name": "react-media-elements",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Support for media attributes in <audio> and <video>",
   "author": "Nino Filiu <nino.filiu@gmail.com> (http://ninofiliu.com)",
   "keywords": [

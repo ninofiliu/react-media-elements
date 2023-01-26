@@ -18,7 +18,8 @@ React does not, and will never, support these:
 
 ```tsx
 const MyComponent = () => (<>
-  <video playbackRate={2}>
+  <video playbackRate={2} preservesPitch srcObject={videoStream} volume={0.5}>
+  <audio playbackRate={0.2} preservesPitch={false} srcObject={audioStream} volume={1}>
 </>)
 ```
 
@@ -31,10 +32,11 @@ const MyComponent = () => (<>
 And this is exactly what this small package does! Usage is as follow:
 
 ```tsx
-import { MediaVideo } from "react-media-elements";
+import { MediaVideo, MediaAudio } from "react-media-elements";
 
 const MyComponent = () => (<>
-  <MediaVideo playbackRate={2}>
+  <MediaVideo playbackRate={2} preservesPitch srcObject={videoStream} volume={0.5}>
+  <MediaAudio playbackRate={0.2} preservesPitch={false} srcObject={audioStream} volume={1}>
 </>)
 ```
 
