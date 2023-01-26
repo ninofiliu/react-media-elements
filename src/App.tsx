@@ -1,36 +1,34 @@
 import { useState } from "react";
-import MediaVideo from "./MediaVideo";
+import { MediaAudio, MediaVideo } from "./lib";
 
 export default () => {
-  const [playbackRate, setPlaybackRate] = useState(2);
-  const [show, setShow] = useState(true);
+  const [srcObject, setSrcObject] = useState<MediaStream | undefined>(
+    undefined
+  );
+  const [volume, setVolume] = useState<number>(1);
+
+  const captureWebcam = async () => {
+    setSrcObject(await navigator.mediaDevices.getUserMedia({ video: true }));
+  };
 
   return (
     <>
-      <h1>Default</h1>
-      <MediaVideo src="/legit0.webm" width={480} autoPlay loop muted />
-
-      <h1>With media attributes</h1>
+      <button onClick={captureWebcam}>Capture webcam</button>
+      <MediaVideo srcObject={srcObject} autoPlay />
       <input
-        type="number"
-        value={playbackRate}
-        onChange={(evt) => setPlaybackRate(+evt.target.value)}
+        type="range"
+        value={volume}
+        onChange={(evt) => setVolume(+evt.target.value)}
+        min={0}
+        max={1}
+        step={0.1}
       />
-      <input
-        type="checkbox"
-        checked={show}
-        onChange={(evt) => setShow(evt.target.checked)}
+      <MediaAudio
+        src="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3"
+        loop
+        volume={volume}
+        controls
       />
-      {show && (
-        <MediaVideo
-          src="/legit0.webm"
-          width={480}
-          autoPlay
-          loop
-          muted
-          playbackRate={playbackRate}
-        />
-      )}
     </>
   );
 };
