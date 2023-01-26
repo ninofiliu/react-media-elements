@@ -1,3 +1,5 @@
+![image](https://user-images.githubusercontent.com/29477588/214853909-ab0776f5-0343-4622-a3c4-63d4bf385947.png)
+
 # React Media Elements
 
 Support for media attributes in `<audio>` and `<video>`
